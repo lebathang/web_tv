@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrap">
+
+  <p>
+  </p>
+  <p>
+
+  </p>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.3.4/lib/darkmode-js.min.js"></script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+
+<!DOCTYPE html>
+<html>
+    
+</body>
+</html>
+<header>
+<link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+<script src="https://unpkg.com/videojs-contrib-hls@5.15.0/dist/videojs-contrib-hls.js"></script>
+<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+<script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+let arr = [
+    { name: "VTV11080p", value: "https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b5000000.m3u8"},
+      { name: "VTV21080p", value: "https://vips-livecdn.fptplay.net/hda1/vtv2_vhls.smil/chunklist_b5000000.m3u8"},
+      { name: "VTV31080p", value: "https://vips-livecdn.fptplay.net/hda1/vtv3hd_vhls.smil/chunklist_b5000000.m3u8"},
+      { name: "VTV51080p", value: "https://vips-livecdn.fptplay.net/hda2/vtv5hd_vhls.smil/chunklist_b5000000.m3u8"},
+      { name: "VTV61080p", value: "https://vips-livecdn.fptplay.net/hda1/vtv6hd_vhls.smil/chunklist_b5000000.m3u8"},
+      { name: "VTV1720p", value: "https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b2500000.m3u8"},
+      { name: "VTV2720p", value: "https://vips-livecdn.fptplay.net/hda1/vtv2_vhls.smil/chunklist_b2500000.m3u8"},
+      { name: "VTV3720p", value: "https://vips-livecdn.fptplay.net/hda1/vtv3hd_vhls.smil/chunklist_b2500000.m3u8"},
+      { name: "VTV5720p", value: "https://vips-livecdn.fptplay.net/hda2/vtv5hd_vhls.smil/chunklist_b2500000.m3u8"},
+      { name: "VTV6720p", value: "https://vips-livecdn.fptplay.net/hda1/vtv6hd_vhls.smil/chunklist_b2500000.m3u8"},
+      { name: "HTV3", value: "https://livecdn.fptplay.net/sdb/htv3_2000.stream/chunklist.m3u8"},
+      { name: "AXN", value: "https://vips-livecdn.fptplay.net/hda3/axnhd_4000.stream/chunklist.m3u8"},
+      { name: "WARNERTV", value: "https://vips-livecdn.fptplay.net/hda3/warnertv_vhls.smil/chunklist_b5000000.m3u8?token=eyJ1c2VyX2lkIjogMjcwNDg4MjEsICJjaGFubmVsX3VybCI6ICJ3YXJuZXJ0dl92aGxzLnNtaWwiLCAiaXNwIjogInZpZXR0ZWwiLCAidGltZXN0YW1wIjogMTY2OTMwNDYyNywgImhhc2hfc2VjcmV0IjogImRhZGNkZjI2NWExZjAwMzEwNjU5NDFhOTRlOWZiNGM5IiwgInJtaXAiOiAiMTE2Ljk3LjUyLjIyOCJ9"},
+      { name: "CARTOONETWORKHD", value: "https://vips-livecdn.fptplay.net/hda3/cartoonnetworkhd_vhls.smil/chunklist_b5000000.m3u8?token=eyJ1c2VyX2lkIjogMjcwNDg4MjEsICJjaGFubmVsX3VybCI6ICJjYXJ0b29ubmV0d29ya2hkX3ZobHMuc21pbCIsICJpc3AiOiAidmlldHRlbCIsICJ0aW1lc3RhbXAiOiAxNjY5MzA0NjgwLCAiaGFzaF9zZWNyZXQiOiAiMDU3MDVkMWRjZTllODQ3ZGMwMTIxYjAxNmJkYjBlODQiLCAicm1pcCI6ICIxMTYuOTcuNTIuMjI4In0"},
+      { name: "Cinemaworld", value: "https://vips-livecdn.fptplay.net/hda2/cinemawork_vhls.smil/chunklist_b5000000.m3u8?token=eyJ1c2VyX2lkIjogMjcwNDg4MjEsICJjaGFubmVsX3VybCI6ICJjaW5lbWF3b3JrX3ZobHMuc21pbCIsICJpc3AiOiAidmlldHRlbCIsICJ0aW1lc3RhbXAiOiAxNjY5MzA0NzU5LCAiaGFzaF9zZWNyZXQiOiAiYWJlODQ3MTRiNTczNjE3NmQ2ZjhjYTcwMmQyYWMzMjYiLCAicm1pcCI6ICIxMTYuOTcuNTIuMjI4In0"},
+      { name: "Boomerang", value: "https://vips-livecdn.fptplay.net/hda3/boomerang_vhls.smil/chunklist_b5000000.m3u8?token=eyJ1c2VyX2lkIjogMjcwNDg4MjEsICJjaGFubmVsX3VybCI6ICJib29tZXJhbmdfdmhscy5zbWlsIiwgImlzcCI6ICJ2aWV0dGVsIiwgInRpbWVzdGFtcCI6IDE2NjkzMDQ4MTYsICJoYXNoX3NlY3JldCI6ICI4YmEyODM0YWJmYzI2NjYxMGQ0M2M5OTVlODNjNGZjOCIsICJybWlwIjogIjExNi45Ny41Mi4yMjgifQ"},
+      { name: "Animalplanet", value: "https://vips-livecdn.fptplay.net/hda2/animalplanet_vhls.smil/chunklist_b5000000.m3u8?token=eyJ1c2VyX2lkIjogMjcwNDg4MjEsICJjaGFubmVsX3VybCI6ICJhbmltYWxwbGFuZXRfdmhscy5zbWlsIiwgImlzcCI6ICJ2aWV0dGVsIiwgInRpbWVzdGFtcCI6IDE2NjkzMDQ4ODUsICJoYXNoX3NlY3JldCI6ICIwYzI0ZmU3YjFjYzlmYjY0MTUwY2RlNTM1YTcxMDQ1YyIsICJybWlwIjogIjExNi45Ny41Mi4yMjgifQ"},
+      { name: "CNN", value: "https://vips-livecdn.fptplay.net/hda3/cnn_4000.stream/chunklist.m3u8"},
+      { name: "Nationalgraphic", value: "https://vips-livecdn.fptplay.net/hda2/natgeohd_vhls.smil/chunklist_b5000000.m3u8?token=eyJ1c2VyX2lkIjogMjcwNDg4MjEsICJjaGFubmVsX3VybCI6ICJuYXRnZW9oZF92aGxzLnNtaWwiLCAiaXNwIjogInZpZXR0ZWwiLCAidGltZXN0YW1wIjogMTY2OTMwNDk1OCwgImhhc2hfc2VjcmV0IjogIjZmNjQ5OTkwYzhmYWExZDRjNGZiM2UyNThhZmEzZDg1IiwgInJtaXAiOiAiMTE2Ljk3LjUyLjIyOCJ9"},
+      { name: "Cinemax", value: "https://livecdn.fptplay.net/hda1/cinemax_vhls.smil/chunklist_b5000000.m3u8"},
+      { name: "VTV6-VTVGO1080p", value: "https://live-drm.vtvdigital.vn/c388810b41827df0658e05baf94dcebe/1669405100203/live/vtv6/1080p.m3u8"},
+      { name: "VTV6-TV3601080p", value: "http://live-ali2.tv360.vn/manifest/VTV6_HD/playlist_720p3M.m3u8"},
+      { name: "hbo", value: "https://hbo-livecdn.fptplay.net/live_dzones/hbo_1080p/manifest.mpd?token=eyJ1c2VyX2lkIjogMjcwNDg4MjEsICJjaGFubmVsX3VybCI6ICJoYm9fMTA4MHAiLCAiaXNwIjogInZpZXR0ZWwiLCAidGltZXN0YW1wIjogMTY2OTU0MDkxNywgImhhc2hfc2VjcmV0IjogImY1NGMyMTg2NGQ4MzIxYzY5OWM5NjdhZGY1MTUxZjA3IiwgInJtaXAiOiAiMTE2Ljk3LjUyLjIyOCJ9"}, 
+      { name: "nguoimaytroiday", value: "https://vod05-cdn.fptplay.net/ovod/_definst_/mp4/encoded/20221126/exmachina-2014-us-logof/cdbbb3634eaa0f599040063248fe4534-1080p.mp4/chunklist.m3u8"},
+
+	
+];
+
+function parse_query_string(query) {
+  var vars = query.split("&");
+  var query_string = {};
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    var key = decodeURIComponent(pair.shift());
+    var value = decodeURIComponent(pair.join("="));
+    // If first entry with this name
+    if (typeof query_string[key] === "undefined") {
+      query_string[key] = value;
+      // If second entry with this name
+    } else if (typeof query_string[key] === "string") {
+      var arr = [query_string[key], value];
+      query_string[key] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[key].push(value);
+    }
+  }
+  return query_string;
+}
+
+$(document.body).on('change',"#selectChannel",function (e) {
+   var optVal= $("#selectChannel option:selected").val();
+   console.log(optVal);
+   window.location.replace("?channel="+optVal); 
+})
+
+$(function() {
+	var query = window.location.search.substring(1);
+	var qs = parse_query_string(query);
+	<!-- console.log("qs: " + qs); -->
+	var cn = 'VTV61080p';
+	if(qs.hasOwnProperty('channel')) {
+		<!-- console.log("channel: " + qs.channel); -->
+		cn = qs.channel;
+	}
+	let obj = arr.find(o => o.name === cn);
+	<!-- console.log(obj); -->
+	document.title= 'Watch ' + obj.name + ' free by Nguyen Huy';
+	document.getElementById("tvsource").src=obj.value;
+	document.getElementById("selectChannel").value=obj.name;
+	var player = videojs('tvplay');
+	player.play();
+	
+});
+</script>
+</header>
+<body>
+<center id="maintv">
+<video id='tvplay' class="video-js" width="1000" height="550" controls autoplay muted>
+<source id='tvsource' type="application/x-mpegURL">
+</video>
+</center>
+<p align="center">Chọn kênh để xem:
+<select id='selectChannel'>
+  <option value="VTV11080p">VTV1 1080p</option>
+      <option value="VTV21080p ">VTV2 FPT 1080p</option>
+      <option value="VTV31080p ">VTV3 FPT 1080p </option>
+      <option value="VTV51080p">VTV5 FPT 1080p</option>
+      <option value="VTV61080p">VTV Cần thơ FPT 1080p</option>
+      <option value="VTV6-VTVGO1080p">VTV Cần Thơ VTVGO 1080p</option>	
+      <option value="VTV6-TV3601080p">VTV Cần Thơ TV360 720p</option>
+      <option value="VTV1720p">VTV1 FPT 720p</option>
+      <option value="VTV2720p ">VTV2 FPT 720p</option>
+      <option value="VTV3720p ">VTV3 FPT 720p </option>
+      <option value="VTV5720p">VTV5 FPT 720p </option>
+      <option value="VTV6720p">VTV6 FPT 720p</option>
+      <option value="HTV3">HTV 3 HD</option>
+      <option value="AXN">AXN HD</option>
+      <option value="WARNERTV">Warner TV HD</option>
+      <option value="CARTOONETWORKHD">Cartoon Network HD</option>
+      <option value="Cinemaworld">Cinemaworld HD</option>
+      <option value="Boomerang">Boomerang HD</option>
+      <option value="Animalplanet">Animal planet HD</option>
+      <option value="CNN">CNN HD</option>
+      <option value="Nationalgraphic">National Graphic HD</option>
+      <option value="Cinemax">Cinemax HD</option>	
+	<option value="hbo">HBO 1080p</option>
+	<option value="nguoimaytroiday">Phim lẻ: Người máy trỗi dậy</option>
+     
+   
+</select>
+ 
+<center><script type="text/javascript" src="https://www.counters-free.net/count/boy3"></script><br></center>
+
+
+</html>
+</p>
+</body>
